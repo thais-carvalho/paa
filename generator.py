@@ -28,7 +28,7 @@ def generate_arrays_for_sizes(sizes, output_dir):
         write_array_to_file(randomly_shuffled_array, os.path.join(output_dir, f"randomly_shuffled_array_{n}.txt"))
 
 if __name__ == "__main__":
-    sizes = [1000, 5000, 10000, 50000]  # Adjust the array sizes as needed
+    sizes = [1000, 5000, 10000, 50000, 100000]  # Adjust the array sizes as needed
     output_dir = "/myfiles/output_files"  # Adjust the output directory path as needed
 
     # Create the output directory if it doesn't exist
