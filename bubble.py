@@ -31,8 +31,8 @@ def write_output_file(file_path, arr):
         for num in arr:
             file.write(f"{num}\n")
 
-input_file = "/uploads/input.txt"
-output_file = "/myfiles/output.txt"
+input_file = "/Users/rapha/Documents/GitHub/paa"
+output_file = "/Users/rapha/Documents/GitHub/paa/output.txt"
 
 
 
