@@ -1,14 +1,14 @@
-#bibliotecas
+# Bibliotecas
 import time
 
-#1.instancia variavel inicio 
-
+# Instancia variável início
 inicio = time.time()
 
-
-#bloco principal do codigo 
+# Bloco principal do código 
 def bubbleSort(arr):
     n = len(arr)
+    comparisons = 0  # Contador de comparações
+    swaps = 0       # Contador de trocas
     
     # Travessia por todos os elementos
     for i in range(n):
@@ -16,6 +16,7 @@ def bubbleSort(arr):
 
         # Last i elements are already in place
         for j in range(0, n-i-1):
+            comparisons += 1  # Incrementa o contador de comparações
 
             # Traverse the array from 0 to n-i-1
             # Swap if the element found is greater
@@ -23,9 +24,11 @@ def bubbleSort(arr):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
                 swapped = True
+                swaps += 1  # Incrementa o contador de trocas
         if swapped == False:
             break
-
+    
+    return comparisons, swaps
 
 def read_input_file(file_path):
     with open(file_path, 'r') as file:
@@ -38,26 +41,25 @@ def write_output_file(file_path, arr):
         for num in arr:
             file.write(f"{num}\n")
 
-input_file = "C:/Users/Public/paa/randomly_shuffled_array_1000.txt"  #lembrar do nome do input
+input_file = "C:/Users/Public/paa/input.txt"  # Lembrar do nome do input
 output_file = "C:/Users/Public/output.txt"
 
-
-#Ler input do arquivo
+# Ler input do arquivo
 arr = read_input_file(input_file)
 
-# Sorteio do array 
-bubbleSort(arr)
+# Ordenar o array e contar comparações e trocas
+comparisons, swaps = bubbleSort(arr)
 
-# Escreve o array sorteado no arquivo
+# Escreve o array ordenado no arquivo
 write_output_file(output_file, arr)
 
-
-
-#instancia variavel fim
+# Instancia variável fim
 fim = time.time()
 
-#instancia variavel delta (fim menos inicio)
-delta = round (fim - inicio,6) # apenas 6 casas decimais
+# Calcula o tempo de execução
+delta = round(fim - inicio, 6)  # Apenas 6 casas decimais
 
-#print
-print(f"tempo de execução: {delta} segundos")
+# Print
+print(f"Tempo de execução: {delta} segundos")
+print(f"Número de comparações: {comparisons}")
+print(f"Número de trocas: {swaps}")
