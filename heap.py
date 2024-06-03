@@ -1,3 +1,12 @@
+#bibliotecas
+import time
+
+#1.instancia variavel inicio 
+
+inicio = time.time()
+
+
+#bloco principal do codigo 
 def heapify(arr, N, i):
     largest = i  # Initialize largest as root
     l = 2 * i + 1     # left = 2*i + 1
@@ -37,9 +46,6 @@ def heapSort(arr):
 
 
 
-
-
-
 def read_input_file(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
@@ -51,10 +57,8 @@ def write_output_file(file_path, arr):
         for num in arr:
             file.write(f"{num}\n")
 
-input_file = "/uploads/input.txt"
-output_file = "/myfiles/output.txt"
-
-
+input_file = "C:/Users/Public/paa/randomly_shuffled_array_1000.txt"
+output_file = "C:/Users/Public/output.txt"
 
 
 # Read input from file
@@ -65,3 +69,13 @@ heapSort(arr)
 
 # Write sorted array to file
 write_output_file(output_file, arr)
+
+#instancia variavel fim
+fim = time.time()
+
+#instancia variavel delta (fim menos inicio)
+delta = round (fim - inicio,6) # apenas 6 casas decimais
+
+#print
+print(f"tempo de execução: {delta} segundos")
+

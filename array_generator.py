@@ -1,6 +1,13 @@
+#bibliotecas
+import time
 import os
 import random
 
+#1.instancia variavel inicio 
+
+inicio = time.time()
+
+#bloco principal do codigo 
 def generate_sorted_array(n):
     return list(range(1, n+1))
 
@@ -29,7 +36,7 @@ def generate_arrays_for_sizes(sizes, output_dir):
 
 if __name__ == "__main__":
     sizes = [1000, 5000, 10000, 50000, 100000]  # Adjust the array sizes as needed
-    output_dir = "/myfiles/output_files"  # Adjust the output directory path as needed
+    output_dir = "C:/Users/Public/"  # Adjust the output directory path as needed
 
     # Create the output directory if it doesn't exist
     if not os.path.exists(output_dir):
@@ -37,3 +44,14 @@ if __name__ == "__main__":
 
     generate_arrays_for_sizes(sizes, output_dir)
     print(f"Arrays for sizes {sizes} have been generated and written to files in {output_dir}.")
+#instancia variavel fim
+fim = time.time()
+
+#instancia variavel delta (fim menos inicio)
+delta = round (fim - inicio,6) # apenas 6 casas decimais
+
+#print
+print(f"tempo de execução: {delta} segundos")
+
+
+
