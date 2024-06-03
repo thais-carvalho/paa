@@ -1,4 +1,12 @@
+#bibliotecas
+import time
 
+#1.instancia variavel inicio 
+
+inicio = time.time()
+
+
+#bloco principal do codigo 
 # Function to find the partition position
 def partition(array, low, high):
 
@@ -59,8 +67,8 @@ def write_output_file(file_path, arr):
         for num in arr:
             file.write(f"{num}\n")
 
-input_file = "/uploads/input.txt"
-output_file = "/myfiles/output.txt"
+input_file = "C:/Users/Public/paa/randomly_shuffled_array_1000.txt"
+output_file = "C:/Users/Public/output.txt"
 
 
 
@@ -73,3 +81,16 @@ quickSort(arr, 0, len(arr) - 1)
 
 # Write sorted array to file
 write_output_file(output_file, arr)
+
+
+
+
+#instancia variavel fim
+fim = time.time()
+
+#instancia variavel delta (fim menos inicio)
+delta = round (fim - inicio,6) # apenas 6 casas decimais
+
+#print
+print(f"tempo de execução: {delta} segundos")
+

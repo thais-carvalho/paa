@@ -1,3 +1,12 @@
+#bibliotecas
+import time
+
+#1.instancia variavel inicio 
+
+inicio = time.time()
+
+#bloco principal do codigo 
+
 # Merges two subarrays of array[].
 # First subarray is arr[left..mid]
 # Second subarray is arr[mid+1..right]
@@ -9,7 +18,7 @@ def merge(array, left, mid, right):
     leftArray = [0] * subArrayOne
     rightArray = [0] * subArrayTwo
 
-    # Copy data to temp arrays leftArray[] and rightArray[]
+    # Copia dado para array de tempo leftArray[] and rightArray[]
     for i in range(subArrayOne):
         leftArray[i] = array[left + i]
     for j in range(subArrayTwo):
@@ -71,8 +80,8 @@ def write_output_file(file_path, arr):
         for num in arr:
             file.write(f"{num}\n")
 
-input_file = "/uploads/input.txt"
-output_file = "/myfiles/output.txt"
+input_file = "C:/Users/Public/paa/randomly_shuffled_array_1000.txt"
+output_file = "C:/Users/Public/output.txt"
 
 
 
@@ -85,3 +94,15 @@ mergeSort(arr, 0, len(arr) - 1)
 
 # Write sorted array to file
 write_output_file(output_file, arr)
+
+
+
+#instancia variavel fim
+fim = time.time()
+
+#instancia variavel delta (fim menos inicio)
+delta = round (fim - inicio,6) # apenas 6 casas decimais
+
+#print
+print(f"tempo de execução: {delta} segundos")
+

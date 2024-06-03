@@ -1,7 +1,16 @@
+#bibliotecas
+import time
+
+#1.instancia variavel inicio 
+
+inicio = time.time()
+
+
+#bloco principal do codigo 
 def bubbleSort(arr):
     n = len(arr)
     
-    # Traverse through all array elements
+    # Travessia por todos os elementos
     for i in range(n):
         swapped = False
 
@@ -18,8 +27,6 @@ def bubbleSort(arr):
             break
 
 
-
-
 def read_input_file(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
@@ -31,17 +38,26 @@ def write_output_file(file_path, arr):
         for num in arr:
             file.write(f"{num}\n")
 
-input_file = "/uploads/input.txt"
-output_file = "/myfiles/output.txt"
+input_file = "C:/Users/Public/paa/randomly_shuffled_array_1000.txt"  #lembrar do nome do input
+output_file = "C:/Users/Public/output.txt"
 
 
-
-
-# Read input from file
+#Ler input do arquivo
 arr = read_input_file(input_file)
 
-# Sort the array
+# Sorteio do array 
 bubbleSort(arr)
 
-# Write sorted array to file
+# Escreve o array sorteado no arquivo
 write_output_file(output_file, arr)
+
+
+
+#instancia variavel fim
+fim = time.time()
+
+#instancia variavel delta (fim menos inicio)
+delta = round (fim - inicio,6) # apenas 6 casas decimais
+
+#print
+print(f"tempo de execução: {delta} segundos")
